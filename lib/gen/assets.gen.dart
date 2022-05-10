@@ -12,6 +12,9 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
+  AssetGenImage get programming => const AssetGenImage('assets/images/programming.png');
+  AssetGenImage get a => const AssetGenImage('assets/images/a.png');
+  AssetGenImage get b => const AssetGenImage('assets/images/b.png');
 }
 
 class Assets {

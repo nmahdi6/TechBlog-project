@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:tec/gen/assets.gen.dart';
+import 'package:tec/my_colors.dart';
 import 'package:tec/splash_screen.dart';
 
 void main() {
+
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor:  solidColors.statusBarColor,
+    statusBarIconBrightness: Brightness.dark,
+    systemNavigationBarColor: solidColors.systemNavigationBarColor,
+    systemNavigationBarIconBrightness: Brightness.dark,
+    ));
+
   runApp(const MyApp());
 }
 
@@ -22,13 +31,25 @@ class MyApp extends StatelessWidget {
         Locale('fa',''), //farsi
       ],
       theme: ThemeData(
+        fontFamily: 'Roboto',
+        brightness: Brightness.light,
         textTheme: const TextTheme(
           // make hedline and bodytext
+          headline1: TextStyle(
+            fontWeight: FontWeight.w700,
+            fontSize: 18,
+            color: solidColors.posterTitle
+          ),
+          subtitle1: TextStyle(
+            fontWeight: FontWeight.w300,
+            fontSize: 16,
+            color: solidColors.posterSubTitle
+          ),
 
         )
       ),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(body: splashScreen()),
+      home: SafeArea(child: Scaffold(body: splashScreen())),
     );
   }
 }

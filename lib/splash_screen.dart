@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:tec/gen/assets.gen.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -16,9 +14,9 @@ class _splashScreenState extends State<splashScreen> {
   @override
   void initState(){
 
-    Future.delayed(Duration(seconds: 3)).then((value){
+    Future.delayed(const Duration(seconds: 1)).then((value){
 
-      Navigator.of(context).push(MaterialPageRoute(
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: ((context) => MainScreen())
         ));
 
@@ -32,23 +30,21 @@ class _splashScreenState extends State<splashScreen> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return SafeArea(
-      child: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image(
-                image: Assets.images.logo,
-                height: 64,
-              ),
-              const SizedBox(height: 20,),
-              const SpinKitFadingCube(
-                color: solidColors.primeryColor,
-                size: 32.0,
-              )
-            ],
-          ),
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image(
+              image: Assets.images.logo,
+              height: 64,
+            ),
+            const SizedBox(height: 20,),
+            const SpinKitFadingCube(
+              color: solidColors.primeryColor,
+              size: 32.0,
+            )
+          ],
         ),
       ),
     );
