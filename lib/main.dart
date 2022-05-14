@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:tec/my_colors.dart';
-import 'package:tec/splash_screen.dart';
+import 'my_colors.dart';
+import 'splash_screen.dart';
 
 void main() {
 
@@ -40,9 +40,14 @@ class MyApp extends StatelessWidget {
             fontSize: 18,
             color: solidColors.posterTitle
           ),
+          headline2: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: 16,
+            color: solidColors.posterSubTitle
+          ),
           subtitle1: TextStyle(
             fontWeight: FontWeight.w300,
-            fontSize: 16,
+            fontSize: 14,
             color: solidColors.posterSubTitle
           ),
 
