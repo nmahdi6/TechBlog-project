@@ -52,7 +52,6 @@ class MyApp extends StatelessWidget {
             color: solidColors.seeMore
           ),
           headline4: TextStyle(
-            fontFamily: 'dana',
             fontWeight: FontWeight.w700,
             fontSize: 16,
             color: solidColors.textTitle

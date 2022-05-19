@@ -93,12 +93,12 @@ flutter:
         - asset: assets/fonts/Roboto-Bold.ttf
           weight: 700
         
-    - family: dana
-      fonts:
-        - asset: fonts/DANA-REGULAR.ttf
-          weight: 300
-        - asset: fonts/DANA-BOLD.ttf
-          weight: 700
+    # - family: dana
+    #   fonts:
+    #     - asset: fonts/DANA-REGULAR.ttf
+    #       weight: 300
+    #     - asset: fonts/DANA-BOLD.ttf
+    #       weight: 700
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
