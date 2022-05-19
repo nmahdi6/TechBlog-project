@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'my_colors.dart';
-import 'splash_screen.dart';
+import 'view/splash_screen.dart';
 
 void main() {
 

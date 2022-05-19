@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'gen/assets.gen.dart';
+import '../gen/assets.gen.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'main_screen.dart';
-import 'my_colors.dart';
+import '../my_colors.dart';
 
 class splashScreen extends StatefulWidget {
   @override
