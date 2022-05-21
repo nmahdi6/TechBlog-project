@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:tec/my_strings.dart';
 import 'package:tec/view/home_screen.dart';
 import 'package:tec/view/profile_screen.dart';
 import '../gen/assets.gen.dart';
-import '../models/fake_data.dart';
 import '../my_colors.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  var selectedPageIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var textTheme = Theme.of(context).textTheme;
     double bodyMargin = size.width / 12;
-    // TODO: implement build
+
+
     return SafeArea(
         child: Scaffold(
       //appbar
@@ -43,10 +49,24 @@ class MainScreen extends StatelessWidget {
       body: Stack(
         children: [
           //body
-          Center(child: Positioned.fill(child: profileScreen(size, textTheme, bodyMargin))),
-          // Center(child: Positioned.fill(child: homeScreen(size, textTheme, bodyMargin))),
+          Center(
+              child: IndexedStack(
+            index: selectedPageIndex,
+            children: [
+              homeScreen(size, textTheme, bodyMargin),
+              profileScreen(size, textTheme, bodyMargin),
+            ],
+          )),
           //bottom nav
-          BottomNav(size: size, bodyMargin: bodyMargin),
+          BottomNav(
+            size: size,
+            bodyMargin: bodyMargin,
+            changeScreen: (int value) {
+              setState(() {
+                selectedPageIndex = value;
+              });
+            },
+          ),
         ],
       ),
     ));
@@ -58,10 +78,12 @@ class BottomNav extends StatelessWidget {
     Key? key,
     required this.size,
     required this.bodyMargin,
+    required this.changeScreen,
   }) : super(key: key);
 
   final Size size;
   final double bodyMargin;
+  final Function(int) changeScreen;
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +101,8 @@ class BottomNav extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.only(right: bodyMargin, left: bodyMargin , bottom: 10),
+          padding:
+              EdgeInsets.only(right: bodyMargin, left: bodyMargin, bottom: 10),
           child: Container(
             height: size.height / 8,
             decoration: const BoxDecoration(
@@ -94,7 +117,7 @@ class BottomNav extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 IconButton(
-                    onPressed: (() {}),
+                    onPressed: (() => changeScreen(0)),
                     icon: ImageIcon(
                       Assets.icons.home,
                       color: Colors.white,
@@ -106,7 +129,7 @@ class BottomNav extends StatelessWidget {
                       color: Colors.white,
                     )),
                 IconButton(
-                    onPressed: (() {}),
+                    onPressed: (() => changeScreen(1)),
                     icon: ImageIcon(
                       Assets.icons.user,
                       color: Colors.white,
