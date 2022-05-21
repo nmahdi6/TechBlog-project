@@ -42,9 +42,16 @@ class $AssetsImagesGen {
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
+  /// File path: assets/images/profileAvatar.png
+  AssetGenImage get profileAvatar =>
+      const AssetGenImage('assets/images/profileAvatar.png');
+
   /// File path: assets/images/programming.png
   AssetGenImage get programming =>
       const AssetGenImage('assets/images/programming.png');
+
+  /// File path: assets/images/tcbot.svg
+  String get tcbot => 'assets/images/tcbot.svg';
 }
 
 class Assets {

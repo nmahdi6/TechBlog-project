@@ -10,7 +10,4 @@ class FontFamily {
 
   /// Font family: Roboto
   static const String roboto = 'Roboto';
-
-  /// Font family: dana
-  static const String dana = 'dana';
 }
