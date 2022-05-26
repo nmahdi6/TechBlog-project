@@ -1,4 +1,4 @@
-class myStrings{
+class MyStrings{
 
 static const String viewHotestBlog = "مشاهده داغ ترین نوشته ها";
 static const String viewHotestPodcasts = "مشاهده داغ ترین پادکست ها";
@@ -9,5 +9,12 @@ static const String imageProfileEdit = "ویرایش عکس پروفایل" ;
 static const String myFavBlog = "مقالات مورد علاقه من" ;
 static const String myFavPodecast = "پادکست های مورد علاقه من" ;
 static const String logOut = "خروج از حساب کاربری" ;
+static const String welcom = 
+"""
+به تک بلاگ خوش اومدی 
+
+برای ارسال مطلب و پادکست باید حتما 
+ثبت نام کنی 
+""" ;
 
 }

@@ -5,6 +5,8 @@ import '../gen/assets.gen.dart';
 import '../my_colors.dart';
 
 class MainScreen extends StatefulWidget {
+  const MainScreen({Key? key}) : super(key: key);
+
   @override
   State<MainScreen> createState() => _MainScreenState();
 }
@@ -23,7 +25,7 @@ class _MainScreenState extends State<MainScreen> {
         child: Scaffold(
       //appbar
       appBar: AppBar(
-        backgroundColor: solidColors.scafoldBg,
+        backgroundColor: SolidColors.scafoldBg,
         elevation: 0,
         title: Padding(
           padding: const EdgeInsets.only(top: 16, left: 15, right: 15),
@@ -95,7 +97,7 @@ class BottomNav extends StatelessWidget {
         height: size.height / 11,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: gradiantColors.bottomNavBackgroand,
+            colors: GradiantColors.bottomNavBackgroand,
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -108,7 +110,7 @@ class BottomNav extends StatelessWidget {
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(24)),
               gradient: LinearGradient(
-                colors: gradiantColors.bottomNav,
+                colors: GradiantColors.bottomNav,
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),

@@ -7,9 +7,9 @@ import 'view/splash_screen.dart';
 void main() {
 
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor:  solidColors.statusBarColor,
+    statusBarColor:  SolidColors.statusBarColor,
     statusBarIconBrightness: Brightness.dark,
-    systemNavigationBarColor: solidColors.systemNavigationBarColor,
+    systemNavigationBarColor: SolidColors.systemNavigationBarColor,
     systemNavigationBarIconBrightness: Brightness.dark,
     ));
 
@@ -38,34 +38,35 @@ class MyApp extends StatelessWidget {
           headline1: TextStyle(
             fontWeight: FontWeight.w700,
             fontSize: 18,
-            color: solidColors.posterTitle
+            color: SolidColors.posterTitle
           ),
           headline2: TextStyle(
             fontWeight: FontWeight.w400,
             fontSize: 16,
-            color: solidColors.posterSubTitle
+            color: SolidColors.posterSubTitle
           ),
           headline3: TextStyle(
             fontFamily: 'dana',
             fontWeight: FontWeight.w700,
             fontSize: 15,
-            color: solidColors.seeMore
+            color: SolidColors.seeMore
           ),
           headline4: TextStyle(
             fontWeight: FontWeight.w700,
             fontSize: 16,
-            color: solidColors.textTitle
+            color: SolidColors.textTitle
           ),
           subtitle1: TextStyle(
             fontWeight: FontWeight.w300,
             fontSize: 14,
-            color: solidColors.posterSubTitle
+            color: SolidColors.posterSubTitle
           ),
 
         )
       ),
       debugShowCheckedModeBanner: false,
-      home: SafeArea(child: Scaffold(body: splashScreen())),
-    );
+      home: const SafeArea(child: Scaffold(body: SplashScreen())),);
+     // home: RegisterIntro()
+     // );
   }
 }
