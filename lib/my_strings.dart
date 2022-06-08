@@ -9,6 +9,7 @@ static const String imageProfileEdit = "ویرایش عکس پروفایل" ;
 static const String myFavBlog = "مقالات مورد علاقه من" ;
 static const String myFavPodecast = "پادکست های مورد علاقه من" ;
 static const String logOut = "خروج از حساب کاربری" ;
+static const String insertYourEmail = "لطفا ایمیلت را وارد کن" ;
 static const String welcom = 
 """
 به تک بلاگ خوش اومدی 
