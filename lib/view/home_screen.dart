@@ -4,45 +4,62 @@ import 'package:tec/my_colors.dart';
 import 'package:tec/my_strings.dart';
 
 import '../gen/assets.gen.dart';
+import '../my_component.dart';
 
-SingleChildScrollView homeScreen(Size size, TextTheme textTheme, double bodyMargin) {
-    return SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(0,8,0,0),
-            child: Column(
-              children: [
-                HomePagePoster(size: size,textTheme: textTheme,),
-
-                const SizedBox(
-                  height: 16,
-                ),
-                HomePageTagList(bodyMargin: bodyMargin,textTheme: textTheme,),
-
-                const SizedBox(
-                  height: 26,
-                ),
-                SeeMoreBlog(bodyMargin: bodyMargin,textTheme: textTheme,),
-
-                HomePageBlogList(size: size,bodyMargin: bodyMargin,textTheme: textTheme,), 
-
-                const SizedBox(height: 20,),
-                SeeMorePodcast(bodyMargin: bodyMargin,textTheme: textTheme,),
-
-                HomePagePodcastList(size: size,bodyMargin: bodyMargin,textTheme: textTheme),
-
-                 SizedBox(height: size.height/11,), 
-              ],
-            ),
+SingleChildScrollView homeScreen(
+    Size size, TextTheme textTheme, double bodyMargin) {
+  return SingleChildScrollView(
+    physics: const BouncingScrollPhysics(),
+    child: Padding(
+      padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+      child: Column(
+        children: [
+          HomePagePoster(
+            size: size,
+            textTheme: textTheme,
           ),
-        );
-  }
+          const SizedBox(
+            height: 16,
+          ),
+          HomePageTagList(
+            bodyMargin: bodyMargin,
+            textTheme: textTheme,
+          ),
+          const SizedBox(
+            height: 26,
+          ),
+          SeeMoreBlog(
+            bodyMargin: bodyMargin,
+            textTheme: textTheme,
+          ),
+          HomePageBlogList(
+            size: size,
+            bodyMargin: bodyMargin,
+            textTheme: textTheme,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          SeeMorePodcast(
+            bodyMargin: bodyMargin,
+            textTheme: textTheme,
+          ),
+          HomePagePodcastList(
+              size: size, bodyMargin: bodyMargin, textTheme: textTheme),
+          SizedBox(
+            height: size.height / 11,
+          ),
+        ],
+      ),
+    ),
+  );
+}
 
 class HomePagePodcastList extends StatelessWidget {
   const HomePagePodcastList({
     Key? key,
     required this.size,
-    required this.bodyMargin, 
+    required this.bodyMargin,
     required this.textTheme,
   }) : super(key: key);
   final Size size;
@@ -71,26 +88,21 @@ class HomePagePodcastList extends StatelessWidget {
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.all(
-                                  Radius.circular(16)),
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(16)),
                               image: DecorationImage(
-        
-        
-        
-                                image: NetworkImage(
-                                    podcastList[index].imageUrl),
+                                image:
+                                    NetworkImage(podcastList[index].imageUrl),
                                 fit: BoxFit.cover,
                               )),
                           foregroundDecoration: const BoxDecoration(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(16)),
+                            borderRadius: BorderRadius.all(Radius.circular(16)),
                             gradient: LinearGradient(
                                 begin: Alignment.bottomCenter,
                                 end: Alignment.topCenter,
                                 colors: GradiantColors.blogPost),
                           ),
                         ),
-                        
                       ],
                     ),
                   ),
@@ -167,7 +179,9 @@ class HomePageBlogList extends StatelessWidget {
           itemBuilder: ((context, index) {
             //blog item
             return Padding(
-              padding:  EdgeInsets.only(right: index == 0 ? bodyMargin : 20,),
+              padding: EdgeInsets.only(
+                right: index == 0 ? bodyMargin : 20,
+              ),
               child: Column(
                 children: [
                   SizedBox(
@@ -177,16 +191,14 @@ class HomePageBlogList extends StatelessWidget {
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.all(
-                                  Radius.circular(16)),
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(16)),
                               image: DecorationImage(
-                                image:
-                                    NetworkImage(blogList[index].imageUrl),
+                                image: NetworkImage(blogList[index].imageUrl),
                                 fit: BoxFit.cover,
                               )),
                           foregroundDecoration: const BoxDecoration(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(16)),
+                            borderRadius: BorderRadius.all(Radius.circular(16)),
                             gradient: LinearGradient(
                                 begin: Alignment.bottomCenter,
                                 end: Alignment.topCenter,
@@ -198,17 +210,16 @@ class HomePageBlogList extends StatelessWidget {
                           left: 0,
                           right: 0,
                           child: Row(
-                            mainAxisAlignment:
-                                MainAxisAlignment.spaceAround,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Text(
-                                blogList[index].writer ,
+                                blogList[index].writer,
                                 style: textTheme.subtitle1,
                               ),
                               Row(
                                 children: [
                                   Text(
-                                     blogList[index].views,
+                                    blogList[index].views,
                                     style: textTheme.subtitle1,
                                   ),
                                   const SizedBox(
@@ -228,13 +239,16 @@ class HomePageBlogList extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 7 , right: 3),
+                    padding: const EdgeInsets.only(top: 7, right: 3),
                     child: SizedBox(
-                      width: size.width/2.4 - 5,
-                      child: Text(blogList[index].title,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 2,style: textTheme.headline4,),
+                      width: size.width / 2.4 - 5,
+                      child: Text(
+                        blogList[index].title,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
+                        style: textTheme.headline4,
                       ),
+                    ),
                   ),
                 ],
               ),
@@ -247,7 +261,7 @@ class HomePageBlogList extends StatelessWidget {
 class SeeMoreBlog extends StatelessWidget {
   const SeeMoreBlog({
     Key? key,
-     required this.bodyMargin,
+    required this.bodyMargin,
     required this.textTheme,
   }) : super(key: key);
   final double bodyMargin;
@@ -278,7 +292,7 @@ class SeeMoreBlog extends StatelessWidget {
 
 class HomePageTagList extends StatelessWidget {
   const HomePageTagList({
-    Key? key, 
+    Key? key,
     required this.bodyMargin,
     required this.textTheme,
   }) : super(key: key);
@@ -294,38 +308,9 @@ class HomePageTagList extends StatelessWidget {
           itemCount: tagList.length,
           itemBuilder: ((context, index) {
             return Padding(
-              padding: EdgeInsets.fromLTRB(
-                  0, 8, index == 0 ? bodyMargin : 15, 8),
-              child: Container(
-                height: 60,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                  gradient: LinearGradient(
-                    colors: GradiantColors.tags,
-                    begin: Alignment.centerRight,
-                    end: Alignment.centerLeft,
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 8, 8, 8),
-                  child: Row(
-                    children: [
-                      ImageIcon(
-                        Assets.icons.hashtag,
-                        color: Colors.white,
-                        size: 16,
-                      ),
-                      const SizedBox(
-                        width: 8,
-                      ),
-                      Text(
-                        tagList[index].title,
-                        style: textTheme.headline2,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              padding:
+                  EdgeInsets.fromLTRB(0, 8, index == 0 ? bodyMargin : 15, 8),
+              child: MainTags(textTheme: textTheme,index: index,),
             );
           })),
     );
@@ -339,8 +324,8 @@ class HomePagePoster extends StatelessWidget {
     required this.textTheme,
   }) : super(key: key);
 
-  final Size size; 
-  final TextTheme textTheme; 
+  final Size size;
+  final TextTheme textTheme;
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,5 @@
 import 'package:tec/gen/assets.gen.dart';
+import 'package:tec/view/my_cats.dart';
 import 'data_models.dart';
 
 Map homePagePosterMap = {
@@ -24,6 +25,8 @@ List<HashTagModel> tagList = [
   HashTagModel(title: "iot"),
   HashTagModel(title: "دارت"),
 ];
+
+List <HashTagModel> selectedTags = [];
 
 
 
