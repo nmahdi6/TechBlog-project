@@ -10,6 +10,7 @@ class MainScreen extends StatefulWidget {
   @override
   State<MainScreen> createState() => _MainScreenState();
 }
+final GlobalKey<ScaffoldState> _key = GlobalKey();
 
 class _MainScreenState extends State<MainScreen> {
   var selectedPageIndex = 0;
@@ -20,11 +21,66 @@ class _MainScreenState extends State<MainScreen> {
     var textTheme = Theme.of(context).textTheme;
     double bodyMargin = size.width / 12;
 
-
     return SafeArea(
         child: Scaffold(
+          key: _key,
+      //drawer
+      drawer: Drawer(
+        backgroundColor: SolidColors.scafoldBg,
+        child: Padding(
+          padding: EdgeInsets.only(right: bodyMargin, left: bodyMargin),
+          child: ListView(
+            children: [
+              DrawerHeader(
+                child: Image.asset(
+                  Assets.images.logo.path,
+                  scale: 3,
+                ),
+              ),
+              ListTile(
+                title: Text(
+                  "پروفایل کاربری",
+                  style: textTheme.headline4,
+                ),
+                onTap: () {},
+              ),
+              const Divider(
+                color: SolidColors.dividerColor,
+              ),
+              ListTile(
+                title: Text(
+                  "درباره ی تک بلاگ",
+                  style: textTheme.headline4,
+                ),
+                onTap: () {},
+              ),
+              const Divider(
+                color: SolidColors.dividerColor,
+              ),
+              ListTile(
+                title: Text(
+                  "اشتراک گذاری تک بلاگ",
+                  style: textTheme.headline4,
+                ),
+                onTap: () {},
+              ),
+              const Divider(
+                color: SolidColors.dividerColor,
+              ),
+              ListTile(
+                title: Text(
+                  "تک بلاگ در گیت هاب",
+                  style: textTheme.headline4,
+                ),
+                onTap: () {},
+              ),
+            ],
+          ),
+        ),
+      ),
       //appbar
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: SolidColors.scafoldBg,
         elevation: 0,
         title: Padding(
@@ -32,9 +88,14 @@ class _MainScreenState extends State<MainScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Icon(
-                Icons.menu,
-                color: Colors.black,
+              InkWell(
+                onTap: () {
+                  _key.currentState!.openDrawer();
+                },
+                child: const Icon(
+                  Icons.menu,
+                  color: Colors.black,
+                ),
               ),
               Image(
                 image: Assets.images.logo,
@@ -48,6 +109,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ),
       ),
+
       body: Stack(
         children: [
           //body

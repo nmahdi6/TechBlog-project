@@ -66,8 +66,6 @@ class _MyCatsState extends State<MyCats> {
                 const SizedBox(
                   height: 32,
                 ),
-
-
                 // taglist
                 SizedBox(
                   width: double.infinity,
@@ -87,15 +85,9 @@ class _MyCatsState extends State<MyCats> {
                         return InkWell(
                             onTap: (() {
                               setState(() {
-                                // for (int i = 0 , ,i++) {
-                                //   if(tagList[i] == selectedTags[i]){
-                                //     break;
-                                //   };
-                                //  };
-
-                                selectedTags.add(tagList[index]);
-                                
-                                
+                                if(!selectedTags.contains(tagList[index])){
+                                  selectedTags.add(tagList[index]);
+                                }
                               });
                             }),
                             child:

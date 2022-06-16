@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/services.dart';
 import 'package:tec/view/main_screen.dart';
+import 'package:tec/view/my_cats.dart';
 import 'package:tec/view/register_intro.dart';
 import 'my_colors.dart';
 import 'view/splash_screen.dart';
@@ -131,6 +132,6 @@ class MyApp extends StatelessWidget {
                     fontWeight: FontWeight.w700))),
         debugShowCheckedModeBanner: false,
         // home: const SafeArea(child: Scaffold(body: SplashScreen())),);
-        home: RegisterIntro());
+        home: MyCats());
   }
 }
