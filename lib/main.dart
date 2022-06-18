@@ -59,40 +59,7 @@ class MyApp extends StatelessWidget {
                 }),
               ),
             ),
-            // theme: ThemeData(
-            //   fontFamily: 'Roboto',
-            //   brightness: Brightness.light,
-            //   textTheme: const TextTheme(
-            //     // make hedline and bodytext
-            //     headline1: TextStyle(
-            //       fontWeight: FontWeight.w700,
-            //       fontSize: 18,
-            //       color: SolidColors.posterTitle
-            //     ),
-            //     headline2: TextStyle(
-            //       fontWeight: FontWeight.w400,
-            //       fontSize: 16,
-            //       color: SolidColors.posterSubTitle
-            //     ),
-            //     headline3: TextStyle(
-            //       fontFamily: 'dana',
-            //       fontWeight: FontWeight.w700,
-            //       fontSize: 15,
-            //       color: SolidColors.seeMore
-            //     ),
-            //     headline4: TextStyle(
-            //       fontWeight: FontWeight.w700,
-            //       fontSize: 16,
-            //       color: SolidColors.textTitle
-            //     ),
-            //     subtitle1: TextStyle(
-            //       fontWeight: FontWeight.w300,
-            //       fontSize: 14,
-            //       color: SolidColors.posterSubTitle
-            //     ),
-            //   )
-            // ),
-
+            
             fontFamily: 'dana',
             brightness: Brightness.light,
             textTheme: const TextTheme(
