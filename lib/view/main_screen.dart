@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tec/component/my_colors.dart';
 import 'package:tec/view/home_screen.dart';
 import 'package:tec/view/profile_screen.dart';
 import '../gen/assets.gen.dart';
-import '../my_colors.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
